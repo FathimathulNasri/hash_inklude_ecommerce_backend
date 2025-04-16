@@ -10,7 +10,13 @@ const productRoutes = require("./routes/product");
 const cartRoutes = require("./routes/cart");
 
 const app = express();
-app.use(cors());
+
+const allowedOrigins = ['https://govagamon.netlify.app', 'http://localhost:3000'];
+
+app.use(cors({
+    origin: allowedOrigins
+}));
+
 app.use(bodyParser.json());
 
 app.use("/api/auth", authRoutes);
