@@ -1,9 +1,9 @@
 const cron = require('node-cron');
 const Cart = require("../models/Cart");
-const sendWhatsApp = require("../utils/sendWhatsApp"); // See below
+const sendWhatsApp = require("../utils/sendWhatsapp"); // See below
 
 cron.schedule('* * * * *', async () => {
-  const fiveMinutesAgo = new Date(Date.now() - 1 * 60 * 1000);
+  const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000);
 
   const carts = await Cart.find({
     lastUpdated: { $lte: fiveMinutesAgo },
