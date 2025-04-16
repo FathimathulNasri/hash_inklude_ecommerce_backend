@@ -11,7 +11,7 @@ const cartRoutes = require("./routes/cart");
 
 const app = express();
 
-const allowedOrigins = ['https://govagamon.netlify.app', 'http://localhost:3000'];
+const allowedOrigins = ['https://hasinclude-e-com.netlify.app', 'http://localhost:3000'];
 
 app.use(cors({
     origin: allowedOrigins
